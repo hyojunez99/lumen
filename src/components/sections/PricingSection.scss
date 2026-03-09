@@ -1,0 +1,92 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+@use "../../assets/scss/mixin" as *;
+
+#pricing {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  @include flex-layout(column, center, center, 6rem);
+  .pricing-title {
+    @include flex-layout(column, center, center, 1.5rem);
+    h1 {
+      @include font-h1();
+    }
+    p {
+      color: var(--text-sub);
+    }
+  }
+  .pricing-card-zip {
+    width: 90%;
+    margin: 0 auto;
+    .pricing-card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      .pricing-card-item {
+        position: relative;
+        @include flex-layout(column, flex-start, flex-start, 1.5rem);
+        padding: 3rem;
+        border: 1.5px solid transparent;
+        border-radius: 1rem;
+        background: var(--color-bg);
+        cursor: pointer;
+        transition: 0.3s;
+        &.active {
+          background: linear-gradient(
+            135deg,
+            rgba(108, 140, 255, 0.06),
+            rgba(108, 140, 255, 0.12)
+          );
+          transform: scale(1.03);
+          border: 1.5px solid #6c8cff;
+          box-shadow: 0 18px 40px rgba(108, 140, 255, 0.15);
+        }
+        .pricing-txt {
+          @include flex-layout(column, center, flex-start, 0.5rem);
+          h3 {
+            @include font-h4;
+          }
+          p {
+            color: var(--text-sub);
+          }
+        }
+        .pricing-price {
+          @include flex-layout(row, center, center, 0.5rem);
+          h2 {
+            @include font-h2;
+          }
+        }
+        .pricing-btn {
+          width: 100%;
+        }
+        .pricing-list {
+          @include flex-layout(column, center, flex-start, 1rem);
+          .pricing-desc {
+            @include flex-layout(row, center, center, 0.5rem);
+          }
+        }
+        &:hover {
+          transform: scale(1.03);
+          border: 1.5px solid #6c8cff;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+      }
+      .badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-main);
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 999px;
+      }
+    }
+  }
+  .pricing-bottom-txt {
+    p {
+      color: var(--text-sub);
+    }
+  }
+}

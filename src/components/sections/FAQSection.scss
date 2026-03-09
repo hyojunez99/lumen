@@ -1,0 +1,65 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+@use "../../assets/scss/mixin" as *;
+
+#faq {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  @include flex-layout(column, center, center, 6rem);
+  .faq-title {
+    @include flex-layout(column, center, center, 1.5rem);
+    h1 {
+      @include font-h1();
+    }
+    p {
+      color: var(--text-sub);
+    }
+  }
+  .faq-card {
+    width: 800px;
+    max-width: 90%;
+    .faq-card-item {
+      cursor: pointer;
+      border-bottom: 1px solid #e5e5e5;
+      transition: 0.3s;
+      &:hover {
+        background: rgba(108, 140, 255, 0.05);
+      }
+      .faq-question {
+        @include flex-layout(row, space-between, center, 0);
+        padding: 1.5rem;
+        span {
+          @include font-BL;
+        }
+      }
+      .arrow {
+        transition: 0.3s;
+      }
+      .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: padding 0.3s;
+        color: var(--text-sub);
+        line-height: 1.6;
+      }
+      &.active {
+        background: rgba(108, 140, 255, 0.04);
+        .arrow {
+          transform: rotate(180deg);
+        }
+        .faq-answer {
+          max-height: 500px;
+          padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+      }
+    }
+  }
+  .faq-bottom-txt {
+    @include flex-layout(column, center, center, 1rem);
+    p {
+      color: var(--text-sub);
+    }
+  }
+}

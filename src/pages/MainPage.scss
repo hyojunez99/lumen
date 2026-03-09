@@ -1,0 +1,7 @@
+@use "../assets/scss/variables" as *;
+@use "../assets/scss/font" as *;
+@use "../assets/scss/mixin" as *;
+
+main {
+  @include flex-layout(column, center, center, 5rem);
+}

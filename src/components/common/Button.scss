@@ -1,0 +1,31 @@
+@use "../../assets//scss/mixin" as *;
+@use "../../assets//scss/variables" as *;
+@use "../../assets//scss/font" as *;
+
+.btn {
+  @include font-body;
+  @include flex-layout();
+  padding: 1rem 1.5rem;
+  background: var(--color-main);
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    filter: brightness(0.9);
+  }
+  &-outline {
+    background: var(--text-white);
+    border: 1px solid #e2e8f0;
+    color: #222;
+  }
+  &-outline-blue {
+    color: var(--color-blue);
+    background: var(--text-white);
+    border: 1px solid #6c8cff;
+  }
+  &-ghost {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+  }
+}

@@ -1,0 +1,59 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+@use "../../assets/scss/mixin" as *;
+
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  .hero-bg {
+    @include flex-layout(column, center, center, 0);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    img {
+      width: 80%;
+      height: 80%;
+    }
+  }
+  .hero-main {
+    @include flex-layout(column, center, center, 4rem);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    .hero-txt {
+      @include flex-layout(column, center, center, 1.5rem);
+      .hero-title {
+        @include flex-layout(column, center, center, 0);
+        h1 {
+          @include font-h1;
+          span {
+            background: var(--color-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+          }
+        }
+      }
+      .hero-title-sub {
+        color: var(--text-sub);
+      }
+    }
+    .hero-btn {
+      @include flex-layout(row, center, center, 1rem);
+    }
+  }
+  .hero-info {
+    @include flex-layout(row, center, center, 3rem);
+    .info {
+      @include flex-layout(column, center, center, 0.5rem);
+    }
+    .info:not(:last-child) {
+      padding-right: 3rem;
+      border-right: 2px solid #dbdbdb;
+    }
+  }
+}

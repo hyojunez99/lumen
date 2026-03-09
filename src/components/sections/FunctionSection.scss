@@ -1,0 +1,58 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+@use "../../assets/scss/mixin" as *;
+
+#function {
+  @include flex-layout(column, center, center, 0);
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  .function-bg {
+    @include flex-layout(column, center, center, 6rem);
+    margin: 0 auto;
+    width: 90%;
+    .function-txt {
+      @include flex-layout(column, center, center, 1.5rem);
+      .function-title {
+        h1 {
+          @include font-h1;
+        }
+      }
+      .function-title-sub {
+        p {
+          color: var(--text-sub);
+        }
+      }
+    }
+    .function-card-zip {
+      .function-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        align-items: stretch;
+        .function-card-item {
+          @include flex-layout(column, center, flex-start, 1.5rem);
+          padding: 1.5rem 2.25rem;
+          border-radius: 1rem;
+          border: 1px solid #e5e5e5;
+          background: #fff;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: transparent;
+          }
+          img {
+            width: 48px;
+            height: 48px;
+          }
+          p {
+            color: var(--text-sub);
+          }
+        }
+      }
+    }
+  }
+}

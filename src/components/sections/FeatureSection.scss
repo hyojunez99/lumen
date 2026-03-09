@@ -1,0 +1,83 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+@use "../../assets/scss/mixin" as *;
+
+#feature {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  .feature-card-zip {
+    @include flex-layout(column, center, center, 0);
+    .feature-card {
+      margin: 0 auto;
+      width: 100%;
+      .feature-card-item {
+        @include flex-layout(column, center, center, 0);
+        padding: 8rem 5rem;
+        &:nth-of-type(2) {
+          background-color: var(--color-bg);
+          .feature-sec {
+            flex-direction: row-reverse;
+          }
+        }
+        .feature-sec {
+          width: 100%;
+          @include flex-layout(row, flex-start, center, 3rem);
+          align-items: center;
+
+          .feature-item {
+            @include flex-layout(column, center, flex-start, 1.5rem);
+            padding: 1.5rem 3rem;
+            .feature-txt {
+              @include flex-layout(column, center, flex-start, 1.5rem);
+              .feature-btn {
+                padding: 0.5rem 1rem;
+                border-radius: 6rem;
+                p {
+                  @include font-cap;
+                }
+              }
+              .feature-btn-1 {
+                border: 1px solid rgba(108, 140, 255, 0.19);
+                background: rgba(108, 140, 255, 0.08);
+                P {
+                  color: var(--color-blue);
+                }
+              }
+              .feature-btn-2 {
+                border: 1px solid rgba(155, 92, 255, 0.19);
+                background: rgba(155, 92, 255, 0.08);
+                P {
+                  color: var(--color-purple);
+                }
+              }
+              .feature-btn-3 {
+                border: 1px solid rgba(46, 211, 183, 0.19);
+                background: rgba(46, 211, 183, 0.08);
+                P {
+                  color: var(--color-green);
+                }
+              }
+              .feature-title {
+                h2 {
+                  @include font-h2;
+                }
+              }
+              .feature-sub {
+                p {
+                  color: var(--text-sub);
+                }
+              }
+            }
+            .feature-sublist {
+              @include flex-layout(column, center, flex-start, 1rem);
+              > li {
+                @include flex-layout(row, center, center, 0.5rem);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+@use "../../assets/scss/mixin" as *;
+
+header {
+  position: fixed;
+  z-index: 20;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  @include flex-layout(row, center, center, 0);
+  width: 100%;
+  .header-bar {
+    @include flex-layout(row, space-between);
+    width: 90%;
+    .menu {
+      @include flex-layout();
+      li {
+        a {
+          position: relative;
+          display: block;
+          padding: 0.5rem 1rem;
+          color: var(--text-sub);
+          text-decoration: none;
+          transition: 0.3s;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #6c8cff;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: 0.3s;
+          }
+          &.active {
+            color: var(--text-black);
+            font-weight: 600;
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+          &:hover {
+            color: var(--text-black);
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+
+    .login {
+      @include flex-layout();
+
+      li {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+        &:hover {
+          color: var(--text-sub);
+        }
+      }
+    }
+  }
+}
